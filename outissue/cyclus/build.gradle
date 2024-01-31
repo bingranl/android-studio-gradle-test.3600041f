@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.other.leanback
+    api deps.other.rebound
+    api deps.support.annotations
+}
+
+android {
+    namespace 'com.studio.cyclus'
+}

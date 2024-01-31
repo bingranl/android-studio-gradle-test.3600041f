@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor deps.other.recyclerview
+
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api project(':subvola:remigrate')
+    api project(':subvola:gorgoneum:Chordata')
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:oleometer')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:situla')
+    api project(':outissue:carnally')
+    api project(':fratry:sodden')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api project(':fratry:crapple')
+    api deps.other.geo
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.other.exo
+    api deps.other.appcompat
+
+    compileOnly deps.apt.javax
+
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.halsen'
+}

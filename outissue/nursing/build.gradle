@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.support.annotations
+    annotationProcessor deps.other.recyclerview
+    api deps.other.appcompat
+
+    api deps.external.gson
+    api deps.other.googleMap
+    api deps.other.rave
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.nursing'
+}

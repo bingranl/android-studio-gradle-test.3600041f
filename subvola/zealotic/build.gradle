@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+
+    api project(':outissue:extended')
+    api project(':outissue:bracciale')
+    api project(':outissue:oleometer')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:tristate')
+    api project(':outissue:carnally')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api deps.external.dagger
+    api deps.external.rxandroid
+    api deps.external.timber
+    annotationProcessor deps.other.raveCompiler
+    api deps.other.googleMap
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.zealotic'
+}

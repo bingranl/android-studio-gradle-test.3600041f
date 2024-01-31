@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.support.annotations
+    api deps.support.appCompat
+    api deps.external.rxjava
+
+    api deps.other.crittercism
+    api deps.other.geo
+
+    compileOnly deps.apt.javax
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.emerse'
+}

@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.support.annotations
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.oleometer'
+}

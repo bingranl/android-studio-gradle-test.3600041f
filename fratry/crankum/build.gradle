@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:skiapod')
+    api project(':fratry:subradius')
+
+    api deps.other.geo
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.crankum'
+}

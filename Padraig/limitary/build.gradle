@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:proctoral')
+    api deps.support.annotations
+    api project(':outissue:oleometer')
+    annotationProcessor deps.other.autoValueGson
+}
+
+android {
+    namespace 'com.studio.limitary'
+}

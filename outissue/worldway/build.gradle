@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    api deps.external.dagger
+    api deps.external.gson
+    api deps.support.annotations
+    api deps.other.dagger
+    api deps.other.autoCommon
+    api deps.apt.javaxInject
+    api deps.external.picasso
+    api deps.other.crittercism
+    api project(':outissue:carnally')
+    api project(':outissue:extended')
+    api project(':outissue:gliadin')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':fratry:Ormond')
+    api project(':fratry:crippling')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.worldway'
+}

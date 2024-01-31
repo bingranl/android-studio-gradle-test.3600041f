@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:ergamine')
+    api deps.external.rxandroid
+    api deps.other.geo
+    api deps.other.cast
+}
+
+android {
+    namespace 'com.studio.defusion'
+}

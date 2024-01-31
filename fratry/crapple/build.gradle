@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+
+    api project(':outissue:caricetum:concher')
+    api project(':fratry:matchy')
+    api project(':fratry:linotype')
+    api project(':outissue:edictally')
+    api project(':outissue:tristate')
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.other.crittercism
+    api deps.other.geo
+    api deps.other.blockcanary
+
+    testImplementation deps.test.opentracing
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.crapple'
+}

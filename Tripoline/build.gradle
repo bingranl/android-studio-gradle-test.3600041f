@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api project(':outissue:nutate')
+    api project(':outissue:worldway')
+    api project(':outissue:bracciale')
+    api project(':outissue:oleometer')
+    api project(':outissue:airified')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:tristate')
+    api project(':outissue:defusion')
+    api project(':outissue:carnally')
+
+    api project(':fratry:subradius')
+
+    api deps.debug.stethoOkHttp
+    api deps.external.dagger
+    api deps.support.multidex
+    api deps.other.retrofit
+    api deps.other.permissionGen
+    api deps.other.blockcanary
+    annotationProcessor deps.other.autovalue
+
+    debugApi deps.debug.stetho
+
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.Tripoline'
+}

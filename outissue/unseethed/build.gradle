@@ -1,0 +1,6 @@
+apply plugin: 'java-library'
+dependencies {
+    api deps.other.leanback
+    api deps.other.rebound
+    api deps.support.annotations
+}

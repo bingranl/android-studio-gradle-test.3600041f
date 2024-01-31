@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    api project(':fratry:asteep')
+    api project(':fratry:Krapina')
+    api project(':fratry:endothys')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+
+    api project(':outissue:extended')
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.other.rxlifecycle
+    api deps.other.rxrelay
+
+    api deps.external.dagger
+    api deps.external.timber
+
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.psoriasis'
+}

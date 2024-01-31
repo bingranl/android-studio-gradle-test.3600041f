@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+    api deps.external.dagger
+    api deps.other.rxlifecycle
+    api deps.other.locationServiceGoogle
+    api project(':outissue:tetragram')
+    api project(':outissue:stupendly')
+    api project(':outissue:tristate')
+    api project(':outissue:carnally')
+    api project(':fratry:savory')
+    api project(':fratry:Ormond')
+    api project(':fratry:matchy')
+    api project(':fratry:subradius')
+    api project(':fratry:crapple')
+    api project(':outissue:edictally')
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.Cosmati'
+}

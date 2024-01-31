@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+dependencies {
+
+    api deps.apt.autoCommon
+    api deps.external.dagger
+    api deps.apt.javapoet
+    api deps.other.geo
+
+    api project (':outissue:caricetum:concher')
+
+    compileOnly deps.support.annotations
+    compileOnly deps.apt.autoService
+    compileOnly deps.apt.androidApi
+
+    testImplementation deps.test.compileTesting
+    testImplementation deps.other.leanback
+}

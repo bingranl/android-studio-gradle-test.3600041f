@@ -1,0 +1,20 @@
+apply plugin: 'com.android.application'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+
+    compileOnly deps.apt.javax
+
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:proctoral')
+    api project(':outissue:airified')
+    api project(':outissue:carnally')
+    api deps.support.multidex
+    api deps.other.crittercism
+}
+
+android {
+    namespace 'com.studio.thribble'
+}

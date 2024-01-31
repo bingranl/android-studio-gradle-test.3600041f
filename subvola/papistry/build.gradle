@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:extended')
+    api project(':outissue:carnally')
+    api deps.other.location
+    api deps.other.locationServiceGoogle
+    api deps.other.rebound
+
+    api deps.other.javapoet
+
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.papistry'
+}

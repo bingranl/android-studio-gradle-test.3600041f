@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api deps.apt.javaxInject
+    api deps.external.dagger
+    api deps.external.scrollbar
+    api deps.external.timber
+    api deps.support.annotations
+    api deps.other.appcompat
+    api deps.other.geo
+    api deps.other.googleMap
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:carnally')
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.airified'
+}

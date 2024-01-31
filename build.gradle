@@ -1,0 +1,179 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.4.0-alpha04'
+    }
+}
+
+apply from: rootProject.file('dependencies.gradle')
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+	mavenLocal { url = System.getenv('LOCAL_REPO') }
+    }
+}
+
+subprojects { project ->
+    group = "com.studio"
+    afterEvaluate {
+        project.configurations.all {
+            exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+            exclude group: 'org.json', module: 'json'
+            exclude group: 'commons-logging', module: 'commons-logging'
+            exclude group: 'org.javassist', module: 'javassist'
+            exclude group: 'com.google.code.findbugs', module: 'jsr305'
+            exclude group: 'com.google.code.findbugs', module: 'annotations'
+            exclude group: 'org.glassfish', module: 'javax.annotation'
+            exclude module: 'xmlParserAPIs'
+            exclude module: 'xpp3'
+            exclude module: 'xmlpull'
+
+            resolutionStrategy {
+                // google play services pulls in version 24.0.0 without this
+                force 'com.android.support:support-v4:' + deps.versions.supportVersion
+            }
+        }
+
+        if (project.plugins.hasPlugin('java')) {
+            addCommonConfigurationForJavaModules(project)
+        } else if (project.plugins.hasPlugin('com.android.application')
+                || project.plugins.hasPlugin('com.android.library')) {
+            addCommonConfigurationForAndroidModules(project)
+        }
+
+        if (project.plugins.hasPlugin('com.android.application')) {
+            project.android{
+                defaultConfig {
+                    multiDexEnabled true
+                    versionCode 1
+                    versionName "1.0.0"
+                }
+                signingConfigs {
+                    debug {
+                        storeFile file('config/signing/debug.keystore')
+                    }
+                }
+                buildTypes {
+                    release {
+                        signingConfig signingConfigs.debug
+                    }
+                }
+                packagingOptions {
+                    exclude 'META-INF/LICENSE'
+                }
+            }
+        }
+    }
+}
+
+def addCommonConfigurationForJavaModules(Project project) {
+    project.java.sourceCompatibility = JavaVersion.VERSION_1_8
+    project.java.targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+def addCommonConfigurationForAndroidModules(Project project) {
+    project.dependencies {
+        annotationProcessor 'com.google.auto.service:auto-service:1.0-rc2'
+	testImplementation deps.other.espresso
+        androidTestImplementation deps.other.espresso
+    }
+    project.configurations.all {
+        exclude module: "log4j-core"
+    }
+    project.android {
+        compileSdkVersion config.build.compileSdkVersion
+        buildToolsVersion config.build.buildToolsVersion
+
+        defaultConfig {
+            minSdkVersion config.build.minSdkVersion
+            targetSdkVersion config.build.targetSdkVersion
+            vectorDrawables.useSupportLibrary = true
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+def ENTRIES_TO_DELETE = [
+    'LICENSE.txt',
+    'LICENSE',
+    'NOTICE',
+    'asm-license.txt',
+].join(" ")
+def ARCHIVES = [
+    '.okbuck/cache/org.hamcrest--hamcrest-core--1.3.jar',
+    '.okbuck/cache/org.hamcrest--hamcrest-library--1.3.jar',
+    '.okbuck/cache/org.hamcrest--hamcrest-integration--1.3.jar',
+    '.okbuck/cache/org.mockito--mockito-core--1.10.19.jar',
+    '.okbuck/cache/org.assertj--assertj-core--1.7.1.jar',
+]
+//gradle.buildFinished {
+//    ARCHIVES.each { archive ->
+//        "zip -d ${archive} ${ENTRIES_TO_DELETE}".execute().waitFor()
+//    }
+//}
+
+task cleanSources {
+  doLast {
+    subprojects.each {
+      delete fileTree(new File(it.projectDir, "src/")).exclude("main/AndroidManifest.xml")
+    }
+  }
+}
+
+task addSources {
+    doLast {
+        subprojects.each {
+            if (it.plugins.hasPlugin('com.android.application') || it.plugins.hasPlugin('com.android.library')) {
+                def sourceFolder = new File(it.projectDir, 'src')
+                println "Adding sources to: " + sourceFolder
+                copy {
+                    from fileTree(new File(project.rootDir, "gradle/SourceTemplate/app/src/")).exclude("main/AndroidManifest.xml")
+                    into sourceFolder
+                }
+
+                def activityClass = new File(sourceFolder, "main/java/gradle/example/LoginActivity.java")
+
+                def hasAutoService = hasDependency(it, "auto-service")
+                if (!hasAutoService) {
+                    new File(sourceFolder, "main/java/gradle/example/Service.java").delete()
+                }
+
+                adjustPackage(it, "LoginActivity")
+                if (hasAutoService) {
+                    adjustPackage(it, "Service")
+                }
+            }
+        }
+    }
+}
+
+boolean hasDependency(Project project, String name) {
+    project.configurations.getByName("compile").resolve().find { it.name.contains(name) } != null
+}
+
+def adjustPackage(Project project, String className) {
+    def sourceFolder = new File(project.projectDir, 'src')
+    def sourceFile = new File(sourceFolder, "main/java/gradle/example/${className}.java")
+    def manifest = new File(sourceFolder, "main/AndroidManifest.xml").text
+    def projectPackage = manifest.substring(manifest.indexOf('package="') + 9, manifest.indexOf('" xmlns:android'))
+
+    def exampleClassFolder = new File(sourceFolder, "main/java/${projectPackage.replace('.', '/')}")
+    exampleClassFolder.mkdirs()
+
+    sourceFile.text = sourceFile.text.replaceAll("package gradle.example;", "package ${projectPackage};")
+    sourceFile.renameTo(new File(exampleClassFolder, "${className}.java"))
+}

@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+
+    compileOnly deps.apt.javax
+
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:airified')
+    api project(':outissue:caricetum:concher')
+    api project(':outissue:caricetum:skiapod')
+    api project(':outissue:phasmatid')
+    api project(':outissue:carnally')
+    api project(':outissue:Glumaceae')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api project(':fratry:assumpsit')
+
+    api deps.external.dagger
+    api deps.support.design
+    api deps.external.transition
+    api deps.other.exo
+    api deps.other.reflections
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.inhumanly'
+}

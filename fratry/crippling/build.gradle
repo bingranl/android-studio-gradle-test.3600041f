@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    api project(':outissue:tetragram')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:phasmatid')
+    api project(':outissue:tristate')
+    api deps.other.geo
+    api deps.external.dagger
+    api deps.other.utils
+    api deps.other.dagger
+    compileOnly deps.other.roasterJdt
+    api deps.other.rxandroid
+    compileOnly deps.apt.javax
+
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.crippling'
+}

@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api deps.external.gson
+    api deps.support.multidex
+    api deps.other.utils
+    api deps.other.location
+    api deps.other.locationServiceGoogle
+
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:situla')
+    api project(':subvola:atbash')
+    api project(':outissue:carnally')
+
+    compileOnly deps.apt.javax
+}
+
+android {
+    namespace 'com.studio.Bokhara'
+}

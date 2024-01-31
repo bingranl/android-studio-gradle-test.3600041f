@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:extended')
+
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.Ormond'
+}

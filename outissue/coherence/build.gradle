@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.other.geo
+    api deps.other.geo
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.coherence'
+}

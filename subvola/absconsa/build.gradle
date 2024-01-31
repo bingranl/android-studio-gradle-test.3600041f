@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+dependencies {
+    androidTestImplementation deps.support.annotations
+    androidTestImplementation deps.other.recyclerview
+
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.other.appcompat
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api deps.support.annotations
+    api deps.external.dagger
+    api deps.external.picasso
+    api deps.other.retrofit
+    api deps.other.javaxInject
+    api deps.other.appcompat
+    api deps.other.geo
+    api deps.other.rebound
+    api deps.other.rxjava
+    api deps.external.rxandroid
+    api deps.external.rxjava
+    api deps.external.rxjavaasync
+
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:concher')
+    api project(':outissue:aricine')
+    api project(':outissue:tristate')
+    api project(':fratry:Ormond')
+
+    compileOnly deps.apt.javax
+
+    testAnnotationProcessor deps.apt.daggerCompiler
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.absconsa'
+}

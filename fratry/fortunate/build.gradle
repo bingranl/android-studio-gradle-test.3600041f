@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:carnally')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api deps.external.dagger
+    api deps.external.rxandroid
+    api deps.external.timber
+    annotationProcessor deps.other.raveCompiler
+    api deps.other.googleMap
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:caricetum:scientist')
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.fortunate'
+}

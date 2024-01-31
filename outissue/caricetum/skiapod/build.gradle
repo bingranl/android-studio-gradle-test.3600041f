@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+dependencies {
+    compileOnly deps.support.annotations
+
+    api deps.external.rxjava
+    api deps.other.geo
+    api project(':outissue:caricetum:midship')
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.skiapod'
+}

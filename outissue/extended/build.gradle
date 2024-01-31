@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:caricetum:midship')
+
+    api deps.other.geo
+    api project(':outissue:nutate')
+    api project(':outissue:browntail')
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.extended'
+}

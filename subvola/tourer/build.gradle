@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+
+    api project(':outissue:stupendly')
+    api project(':outissue:phasmatid')
+    api project(':outissue:carnally')
+    api project(':fratry:fortunate')
+    api project(':fratry:matchy')
+    api deps.external.picasso
+    api deps.support.cardView
+    api deps.support.design
+    api deps.other.geo
+    api deps.other.blockcanary
+
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:extended')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':fratry:Ormond')
+}
+
+android {
+    namespace 'com.studio.tourer'
+}

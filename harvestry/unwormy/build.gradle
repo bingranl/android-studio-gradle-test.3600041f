@@ -1,0 +1,10 @@
+apply plugin: 'com.android.application'
+dependencies {
+    api project(':harvestry:Timbira')
+    api project(':outissue:carnally')
+    debugApi deps.other.crittercism
+}
+
+android {
+    namespace 'com.studio.unwormy'
+}

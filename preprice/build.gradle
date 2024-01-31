@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor deps.other.appcompat
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api project(':outissue:tetragram')
+    api project(':outissue:bracciale')
+    api project(':outissue:oleometer')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:caricetum:skiapod')
+    api project(':outissue:tristate')
+    api project(':outissue:defusion')
+    api project(':outissue:carnally')
+
+    api project(':fratry:asteep')
+    api project(':fratry:psoriasis')
+    api project(':fratry:passbook')
+    api project(':fratry:crippling')
+
+    api deps.debug.stethoOkHttp
+    api deps.external.dagger
+    api deps.support.multidex
+    api deps.external.gson
+    api deps.other.geo
+    api deps.support.multidex
+    api deps.other.exo
+    api deps.other.mvp
+    api deps.other.utils
+    api deps.other.calligraphy
+    api deps.other.guava
+    api deps.other.picasso
+    api deps.other.timber
+    api deps.other.rxlifecycle
+    api deps.other.javax
+    api deps.other.javaxInject
+    api deps.other.javapoet
+    api deps.other.crittercism
+    api deps.other.location
+    api deps.other.locationServiceGoogle
+
+    debugApi deps.debug.stetho
+
+    compileOnly deps.apt.javax
+
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:caricetum:scientist')
+}
+
+android {
+    namespace 'com.studio.preprice'
+}

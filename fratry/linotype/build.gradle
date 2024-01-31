@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+
+    api project(':outissue:edictally')
+    api deps.other.crittercism
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.linotype'
+}

@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+dependencies {
+    compileOnly deps.support.annotations
+
+    api project(':outissue:cyclus')
+    api project(':outissue:caricetum:skiapod')
+}
+
+android {
+    namespace 'com.studio.scientist'
+}

@@ -1,0 +1,8 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':Padraig:follicle')
+}
+
+android {
+    namespace 'com.studio.cuminoin'
+}

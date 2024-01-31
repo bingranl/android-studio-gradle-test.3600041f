@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:midship')
+    api project(':subvola:unmilked')
+    api project(':Padraig:ratafee')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    compileOnly deps.other.roasterApi
+    api deps.other.geo
+    api deps.external.dagger
+    api deps.other.geo
+
+    compileOnly deps.apt.javax
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.ocracy'
+}

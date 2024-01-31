@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    annotationProcessor deps.apt.daggerCompiler
+
+    api project(':outissue:tetragram')
+    api project(':outissue:carnally')
+    api project(':fratry:sodden')
+    api project(':fratry:subradius')
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.support.design
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.agaric'
+}

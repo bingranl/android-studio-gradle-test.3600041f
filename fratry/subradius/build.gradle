@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:nutate')
+    api project(':outissue:tristate')
+    api project(':fratry:matchy')
+
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.other.appcompat
+
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.other.rxlifecycle
+    api deps.other.rxrelay
+    api deps.other.javaxInject
+    annotationProcessor deps.other.raveCompiler
+    api deps.other.utils
+    api deps.other.design
+    api deps.other.crittercism
+
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.subradius'
+}

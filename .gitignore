@@ -1,0 +1,15 @@
+.gradle
+local.properties
+.idea
+*.iml
+build
+.DS_Store
+.buckconfig.local
+.okbuck
+BUCK
+.buckd
+buck-out
+profile-out*
+gradle-user-home
+!**/src/*/AndroidManifest.xml
+!gradle/SourceTemplate/app/src

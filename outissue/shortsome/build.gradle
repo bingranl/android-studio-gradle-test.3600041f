@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.other.facebook
+    api deps.external.rxjava
+
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.shortsome'
+}

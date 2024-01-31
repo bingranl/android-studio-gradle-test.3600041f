@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+
+    api project(':outissue:proctoral')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':fratry:crapple')
+    api project(':fratry:Ormond')
+    api project(':fratry:subradius')
+    api project(':outissue:carnally')
+
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.support.design
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.remigrate'
+}

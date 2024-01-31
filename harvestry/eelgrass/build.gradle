@@ -1,0 +1,9 @@
+apply plugin: 'com.android.application'
+dependencies {
+    releaseApi project(':Padraig:cuminoin')
+    debugApi project(':Padraig:arbitrate')
+}
+
+android {
+    namespace 'com.studio.eelgrass'
+}

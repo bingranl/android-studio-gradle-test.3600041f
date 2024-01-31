@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+dependencies {
+  api project(':outissue:worldway')
+  api project(':outissue:stupendly')
+  api project(':fratry:Ormond')
+
+  api deps.external.timber
+  api deps.support.annotations
+  api deps.other.dagger
+  api deps.other.crittercism
+
+  testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.paegle'
+}

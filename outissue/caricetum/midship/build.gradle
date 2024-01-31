@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:caricetum:concher')
+    api project(':outissue:carnally')
+
+    api deps.other.retrofit
+    api deps.other.utils
+    api deps.external.rxrelay
+    api deps.external.rxbinding
+    api deps.external.rxlifecycle
+    api deps.external.rxandroid
+    api deps.external.rxjava
+    api deps.external.timber
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.support.appCompat
+
+    testImplementation deps.external.rxlifecycle
+    testImplementation deps.support.appCompat
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.midship'
+}

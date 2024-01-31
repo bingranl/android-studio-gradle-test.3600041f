@@ -1,0 +1,6 @@
+apply plugin: 'java-library'
+dependencies {
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.other.geo
+}

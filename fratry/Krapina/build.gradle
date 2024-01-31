@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+
+    api project(':outissue:extended')
+    api deps.apt.javaxInject
+    api deps.support.annotations
+    api deps.other.rxlifecycle
+    api deps.other.rxrelay
+    api deps.other.dagger
+    annotationProcessor deps.other.autoValueGson
+
+    api deps.external.dagger
+
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.Krapina'
+}

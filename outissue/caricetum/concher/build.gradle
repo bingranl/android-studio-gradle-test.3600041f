@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+dependencies {
+    api deps.external.rxrelay
+    api deps.external.rxjava
+    api deps.other.geo
+
+    compileOnly deps.support.annotations
+    compileOnly deps.apt.androidApi
+
+    testImplementation deps.other.leanback
+    testImplementation deps.apt.androidApi
+    testImplementation deps.support.annotations
+}

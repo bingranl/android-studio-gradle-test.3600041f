@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor deps.other.recyclerview
+
+    api project(':subvola:remigrate')
+    api project(':subvola:gorgoneum:Chordata')
+    api project(':subvola:gorgoneum:metanilic:agaric')
+    api project(':subvola:graphite')
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:situla')
+    api project(':outissue:carnally')
+    api project(':fratry:savory')
+    api project(':fratry:halsen')
+    api deps.support.design
+    api deps.other.exo
+
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:midship')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.transpire'
+}

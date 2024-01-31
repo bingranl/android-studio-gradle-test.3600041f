@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:synarchy')
+    api project(':Padraig:follicle')
+
+    api deps.debug.leakCanary
+    api deps.debug.haha
+    api deps.other.crittercism
+    api deps.debug.stetho
+    api deps.debug.stethoOkHttp
+    api deps.debug.stethoTimber
+}
+
+android {
+    namespace 'com.studio.arbitrate'
+}

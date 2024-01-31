@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:midship')
+    api deps.other.geo
+    api deps.external.dagger
+    api deps.other.geo
+    api deps.other.appcompat
+
+    compileOnly deps.apt.javax
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.unmilked'
+}

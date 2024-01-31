@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:phasmatid')
+    api deps.support.annotations
+}
+
+android {
+    namespace 'com.studio.triduum'
+}

@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.apt.daggerCompiler
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+
+    api deps.apt.javaxInject
+    api deps.external.dagger
+    api deps.support.annotations
+    api deps.other.appcompat
+    api deps.other.crittercism
+    api deps.other.googleMap
+    api project(':outissue:extended')
+    api project(':outissue:edictally')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:aricine')
+    api project(':outissue:carnally')
+    api project(':fratry:subradius')
+
+    testImplementation deps.other.leanback
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.atbash'
+}

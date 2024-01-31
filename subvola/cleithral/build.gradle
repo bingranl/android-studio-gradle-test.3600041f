@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    annotationProcessor deps.apt.daggerCompiler
+
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:caricetum:skiapod')
+    api project(':outissue:coherence')
+    api project(':outissue:tetragram')
+    api project(':Padraig:emerse')
+    api project(':fratry:Ormond')
+
+    api deps.external.dagger
+    api(deps.external.jose4j) {
+        exclude module: 'slf4j-api'
+    }
+    api deps.external.slf4jApi
+    api deps.other.exo
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+}
+
+android {
+    namespace 'com.studio.cleithral'
+}

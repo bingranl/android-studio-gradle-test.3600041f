@@ -1,0 +1,18 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:tetragram')
+    api project(':outissue:extended')
+    api project(':outissue:defusion')
+    api project(':fratry:subradius')
+    annotationProcessor deps.other.autovalue
+    compileOnly deps.other.roasterJdt
+    api deps.other.gson
+    api deps.other.shuffle
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.Brittany'
+}

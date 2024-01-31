@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.support.annotations
+    api deps.other.googleMap
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.aricine'
+}

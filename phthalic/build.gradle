@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+dependencies {
+    debugApi project(':Padraig:arbitrate')
+    releaseApi project(':Padraig:cuminoin')
+
+    testImplementation project(':outissue:cyclus')
+
+    api project(':outissue:oleometer')
+
+    androidTestAnnotationProcessor deps.apt.daggerCompiler
+
+    androidTestImplementation project(':outissue:embrace')
+    androidTestImplementation project(':outissue:oleometer')
+
+    androidTestImplementation deps.test.dexmaker
+    androidTestImplementation deps.test.uiautomator
+    androidTestImplementation deps.test.screenshot
+}
+
+android {
+    namespace 'com.studio.phthalic'
+}

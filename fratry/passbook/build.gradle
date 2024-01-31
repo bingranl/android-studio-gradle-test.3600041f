@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.other.appcompat
+
+    api project(':fratry:matchy')
+    api project(':outissue:tetragram')
+    api project(':outissue:nonjurant')
+    api project(':outissue:nutate')
+    api project(':outissue:oleometer')
+    api project(':outissue:eyesore')
+    api project(':outissue:stupendly')
+    api project(':outissue:situla')
+    api project(':outissue:aricine')
+    api project(':outissue:tristate')
+    api project(':outissue:defusion')
+    api deps.other.guava
+    api deps.other.rxlifecycle
+    api deps.other.autoCommon
+    api deps.other.autoService
+    api deps.other.timber
+    compileOnly deps.apt.javax
+
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:browntail')
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.passbook'
+}

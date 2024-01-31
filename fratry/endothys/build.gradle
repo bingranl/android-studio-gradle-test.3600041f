@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':Padraig:ratafee')
+    api project(':outissue:extended')
+
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+
+    api deps.other.utils
+    annotationProcessor deps.other.autoValueGson
+
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.external.dagger
+
+    api deps.support.annotations
+    api deps.support.v4
+
+    api deps.other.reactivenet
+
+    testAnnotationProcessor deps.apt.daggerCompiler
+    testImplementation project(':outissue:cyclus')
+    testImplementation deps.other.reactivenet
+}
+
+android {
+    namespace 'com.studio.endothys'
+}

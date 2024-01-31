@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+
+    api project (':outissue:shortsome')
+    api project (':outissue:gliadin')
+    api project (':outissue:aricine')
+    api project (':outissue:nutate')
+    api project (':fratry:asteep')
+
+    api deps.external.gson
+    api deps.external.rxjava
+    api deps.external.rxrelay
+    api deps.external.timber
+    api deps.other.blockcanary
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:browntail')
+}
+
+android {
+    namespace 'com.studio.matchy'
+}

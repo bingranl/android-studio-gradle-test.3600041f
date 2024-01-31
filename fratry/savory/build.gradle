@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+    api deps.other.rxlifecycle
+    api deps.other.locationServiceGoogle
+    api project(':fratry:linotype')
+    api project(':fratry:Ormond')
+    api project(':fratry:crapple')
+
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':fratry:crapple')
+}
+
+android {
+    namespace 'com.studio.savory'
+}

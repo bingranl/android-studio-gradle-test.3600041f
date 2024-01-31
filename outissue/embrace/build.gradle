@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api deps.other.leanback
+
+    api deps.support.compat
+    api project(":outissue:proctoral")
+}
+
+android {
+    namespace 'com.studio.embrace'
+}

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor deps.other.recyclerview
+    api deps.support.appCompat
+    api deps.support.cardView
+    api deps.support.design
+    api deps.support.annotations
+    api deps.other.crittercism
+    api deps.external.rxbinding
+    api deps.external.timber
+    api deps.external.picasso
+    api deps.other.geo
+
+    api project(':outissue:extended')
+    api project(':outissue:caricetum:midship')
+    api project(':outissue:carnally')
+
+    testImplementation deps.other.leanback
+    api project(path: ':outissue:phasmatid')
+}
+
+android {
+    namespace 'com.studio.situla'
+}

@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+dependencies {
+    annotationProcessor project(':outissue:caricetum:handbolt')
+    annotationProcessor project(':outissue:caricetum:Chelura')
+    annotationProcessor deps.other.recyclerview
+    annotationProcessor deps.apt.daggerCompiler
+
+    api project(':outissue:tetragram')
+    api project(':outissue:proctoral')
+    api project(':outissue:coherence')
+    api project(':outissue:extended')
+    api project(':outissue:stupendly')
+    api project(':outissue:airified')
+    api project(':outissue:caricetum:skiapod')
+    api project(':fratry:crankum')
+    api project(':fratry:sodden')
+    api project(':fratry:crapple')
+
+    api deps.support.design
+    api deps.external.braintree
+    api deps.other.reflections
+
+    testImplementation deps.test.opentracing
+    testImplementation project(':outissue:cyclus')
+    testImplementation project(':outissue:caricetum:hermetic')
+    testImplementation project(':outissue:caricetum:scientist')
+}
+
+android {
+    namespace 'com.studio.Chordata'
+}

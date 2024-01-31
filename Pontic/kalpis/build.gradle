@@ -1,0 +1,11 @@
+apply plugin: 'java-library'
+dependencies {
+    api project(':Pontic:Yemenic')
+    api deps.apt.autoService
+    api deps.external.gson
+    api deps.other.guava
+    api deps.support.annotations
+
+    testImplementation deps.test.compileTesting
+    testImplementation deps.other.leanback
+}

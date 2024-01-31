@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':subvola:remigrate')
+    api project(':subvola:gorgoneum:unwincing')
+    api project(':subvola:gorgoneum:Chordata')
+    api project(':subvola:gorgoneum:metanilic:agaric')
+    api project(':subvola:gorgoneum:teerer:perscribe')
+    api project(':subvola:gorgoneum:teerer:polytonal')
+    api project(':subvola:gorgoneum:teerer:Onondaga')
+    api project(':subvola:gorgoneum:teerer:Cuphea')
+    api project(':subvola:gorgoneum:teerer:lucrific')
+    api project(':subvola:gorgoneum:teerer:revalenta')
+    api project(':subvola:zelator')
+    api project(':outissue:extended')
+
+    testImplementation project(':outissue:cyclus')
+}
+
+android {
+    namespace 'com.studio.decollete'
+}

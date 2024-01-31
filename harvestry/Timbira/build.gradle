@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+dependencies {
+    api project(':outissue:carnally')
+    api project(':outissue:Glumaceae')
+    api deps.external.rxjava
+    api deps.other.retrofit
+    testImplementation deps.other.leanback
+}
+
+android {
+    namespace 'com.studio.Timbira'
+}
